@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/mainActivity"
+        android:id="@+id/firstFragment"
         android:title="Home"
         android:icon="@drawable/ic_home"/>
     <item
-        android:id="@+id/addRefuelingActivity"
+        android:id="@+id/secondFragment"
         android:title="Add Refueling"
         android:icon="@drawable/ic_person"/>
+    <item
+        android:id="@+id/thirdFragment"
+        android:title="Refueling list"
+        android:icon="@drawable/ic_settings"/>
 </menu>

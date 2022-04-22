@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainActivity">
-
+    app:startDestination="@id/firstFragment">
     <fragment
-        android:id="@+id/mainActivity"
-        android:name="com.calc_app.calc.MainActivity"
-        android:label="fragment_news_list_list"
-        tools:layout="@layout/activity_main" >
-        <action
-            android:id="@+id/action_newsListFragment_to_newsDetailFragment"
-            app:destination="@id/addRefuelingActivity" />
-    </fragment>
+        android:id="@+id/firstFragment"
+        android:name="com.calc_app.calc.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" />
     <fragment
-        android:id="@+id/addRefuelingActivity"
-        android:name="com.calc_app.calc.AddRefuelingActivity"
-        android:label="news_detail_fragment"
-        tools:layout="@layout/add_refueling_activity" />
+        android:id="@+id/secondFragment"
+        android:name="com.calc_app.calc.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.calc_app.calc.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
 </navigation>

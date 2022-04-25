@@ -72,4 +72,17 @@
         app:layout_constraintTop_toBottomOf="@+id/grossLiterPriceTextNumberDecimal"
         android:hint="Nett price"/>
 
+    <Spinner
+        android:id="@+id/vatSpinner"
+        android:layout_width="385dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:minHeight="48dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/netPriceEditTextNumberDecimal"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

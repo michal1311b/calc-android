@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,6 +18,10 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +30,7 @@ import org.json.JSONArray;
  */
 public class SecondFragment extends Fragment {
     JSONArray vats;
+    Spinner vatSpinner;
 
 
     public SecondFragment() {
@@ -48,8 +55,6 @@ public class SecondFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fetchVats();
-
-        System.out.println(vats);
     }
 
     @Override
@@ -73,6 +78,20 @@ public class SecondFragment extends Fragment {
                         if(response.length() > 0) {
                             try {
                                 vats = response;
+                                vatSpinner = requireActivity().findViewById(R.id.vatSpinner);
+
+                                ArrayList<String> vatList = new ArrayList<>();
+
+                                for(int i = 0; i > vats.length() + 1; i++) {
+                                    JSONObject vat = vats.getJSONObject(i);
+                                    vatList.add(vat.getString("display_text"));
+                                }
+
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                                        getActivity().getApplicationContext(),
+                                        android.R.layout.simple_spinner_dropdown_item, vatList);
+                                vatSpinner.setAdapter(adapter);
+                                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
